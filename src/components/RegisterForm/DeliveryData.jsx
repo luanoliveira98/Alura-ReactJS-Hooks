@@ -1,9 +1,14 @@
 import { TextField, Button } from '@material-ui/core';
 import React from 'react';
 
-function DeliveryData(){
+function DeliveryData({onSubmit}){
     return(
-        <form>
+        <form
+            onSubmit={event => {
+                event.preventDefault();
+                onSubmit()
+            }}
+        >
             <TextField 
                 id="cep" label="CEP" type="number"
                 variant="outlined" margin="normal"
@@ -24,7 +29,7 @@ function DeliveryData(){
                 id="city" label="City" type="text"
                 variant="outlined" margin="normal"
             />
-            <Button type="submit" variant="contained" color="primary" fullWidth>Finish Register</Button>
+            <Button type="submit" variant="contained" color="primary" fullWidth>Register</Button>
         </form>
     );
 }

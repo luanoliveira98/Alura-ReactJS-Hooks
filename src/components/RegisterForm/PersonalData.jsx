@@ -14,23 +14,23 @@ function PersonalData({onSubmit, validCPF}) {
         <form 
             onSubmit={event => {
                 event.preventDefault();
-                onSubmit({name, lastName, cpf, promotions, newsletter})
+                onSubmit()
             }}
         >
             <TextField 
                 id="name" label="Name" variant="outlined" margin="normal" fullWidth 
-                value={name} onChange={event => {
+                required value={name} onChange={event => {
                     setName(event.target.value);
                 }}
             />
             <TextField 
-                id="last_name" label="Last Name"  variant="outlined" margin="normal" fullWidth value={lastName} onChange={event => {
+                id="last_name" label="Last Name"  variant="outlined" margin="normal" fullWidth required value={lastName} onChange={event => {
                     setLastName(event.target.value);
                 }}
             />
             <TextField 
                 id="cpf" label="CPF" variant="outlined" margin="normal" fullWidth 
-                value={cpf} onChange={event => {
+                required value={cpf} onChange={event => {
                     setCPF(event.target.value);
                 }} onBlur={() => {
                     setErrors({cpf: validCPF(cpf)});
@@ -61,7 +61,7 @@ function PersonalData({onSubmit, validCPF}) {
                 }
             />
 
-            <Button variant="contained" color="primary" type="submit">Register</Button>
+            <Button variant="contained" color="primary" type="submit">Next</Button>
         </form>
     );
 }
