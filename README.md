@@ -36,3 +36,10 @@
  - Best practices in reusing features
  - Using contexts in react to solve the *prop drilling* problem
  - Too much information problems and code complexity
+
+### Custom Hooks
+
+ - How to use default value within a context
+ - Why we need *Providers* and what are their advantages
+ - How to create Custom Hooks and what are their rules
+ - How to properly share code between components

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import RegisterValidations from '../../contexts/RegisterValidations';
+import useErrors from '../../hooks/useErrors';
 
 import {Button, TextField, Switch, FormControlLabel } from '@material-ui/core';
 
@@ -9,26 +10,9 @@ function PersonalData({ onSubmit }) {
     const [cpf, setCPF] = useState("");
     const [promotions, setPromotions] = useState(true);
     const [newsletter, setNewsletter] = useState(false);
-    const [errors, setErrors] = useState({
-        cpf:{valid:true, helperText:""},
-        name:{valid:true, helperText:""},
-    });
-
+    
     const validations = useContext(RegisterValidations);
-
-    function validateFields(event) {
-        const {name, value} = event.target;
-        const newState = {...errors};
-        newState[name] = validations[name](value);
-        setErrors(newState);
-    }
-
-    function canSubmit() {
-        for(let field in errors) {
-            if(!errors[field].valid) return false;
-        }
-        return true;
-    }
+    const [errors, validateFields, canSubmit] = useErrors(validations);
     return(
         <form 
             onSubmit={event => {
