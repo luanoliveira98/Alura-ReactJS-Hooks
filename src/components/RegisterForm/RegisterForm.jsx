@@ -4,7 +4,7 @@ import UserData from './UserData';
 import DeliveryData from './DeliveryData';
 import { Stepper, Typography, Step, StepLabel } from '@material-ui/core';
 
-function RegisterForm({onSubmit, validCPF}) {
+function RegisterForm({onSubmit}) {
     const [currentStep, setCurrentStep] = useState(0);
     const [dataCollected, setData] = useState({});
     useEffect(() => {
@@ -13,7 +13,7 @@ function RegisterForm({onSubmit, validCPF}) {
 
     const forms = [
         <UserData onSubmit={collectData}/>,
-        <PersonalData onSubmit={collectData} validCPF={validCPF}/>,
+        <PersonalData onSubmit={collectData}/>,
         <DeliveryData onSubmit={collectData}/>,
         <Typography variant="h5" align="center">Thank you for registering!</Typography>
     ];

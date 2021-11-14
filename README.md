@@ -10,7 +10,7 @@
 
 ### Understanding the problem
 
- - UX good practices when working with forms
+ - UX best practices when working with forms
  - Why separate a form in many parts
 
 ### Separating forms
@@ -28,3 +28,11 @@
  - When to use UseEffect Hook
  - Lifecycle of functional components
  - How to use the MaterialUI Stepper component
+
+
+ ### Contexts and Providers
+
+ - Extracting logic from the rendering part
+ - Best practices in reusing features
+ - Using contexts in react to solve the *prop drilling* problem
+ - Too much information problems and code complexity
