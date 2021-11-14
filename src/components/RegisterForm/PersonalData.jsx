@@ -14,7 +14,7 @@ function PersonalData({onSubmit, validCPF}) {
         <form 
             onSubmit={event => {
                 event.preventDefault();
-                onSubmit()
+                onSubmit({name, lastName, cpf, promotions, newsletter})
             }}
         >
             <TextField 

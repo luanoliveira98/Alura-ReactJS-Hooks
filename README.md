@@ -21,3 +21,10 @@
  - Advantages of injecting dependencies into the project
  - Component reuse
  - Switch case refactoring and better code structures
+
+### Controlling lifecycle
+
+ - How to deal with asynchronicity issues
+ - When to use UseEffect Hook
+ - Lifecycle of functional components
+ - How to use the MaterialUI Stepper component
